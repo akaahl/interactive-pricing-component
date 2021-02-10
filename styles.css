@@ -111,6 +111,14 @@ body {
     border-radius: 50%;
 }
 
+.slider-range::-ms-thumb {
+    appearance: none;
+    background: hsl(174, 86%, 45%) url('images/icon-slider.svg') no-repeat center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
 .billing-container {
     margin-bottom: 2rem;
 }
