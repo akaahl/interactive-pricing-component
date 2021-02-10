@@ -83,6 +83,7 @@ body {
 .slider-range {
     margin-bottom: 2rem;
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 100%;
     height: 10px;
