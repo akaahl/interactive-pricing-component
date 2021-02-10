@@ -94,11 +94,16 @@ body {
     transition: all 0.3s ease-in;
 }
 
-.slider-range::-webkit-range-progress {
-    background: hsl(174, 77%, 80%);
-}
 
 .slider-range::-webkit-slider-thumb {
+    appearance: none;
+    background: hsl(174, 86%, 45%) url('images/icon-slider.svg') no-repeat center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.slider-range::-moz-slider-thumb {
     appearance: none;
     background: hsl(174, 86%, 45%) url('images/icon-slider.svg') no-repeat center;
     height: 40px;
