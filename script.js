@@ -14,7 +14,8 @@ sliderRange.addEventListener('input', e => {
                                     hsl(224, 65%, 95%) ${targetPercentage}%)`;
 
     updatePricing(targetValue);
-
+    discountToggle.checked = false;
+    
 })
 
 function updatePricing(targetValue) {
@@ -23,7 +24,6 @@ function updatePricing(targetValue) {
         <p class="left-text">10K Pageviews</p>
         <p><span id="price" class="price">$8.00</span> <span class="per-month">/ month</span></p>
         `;
-        applyDiscount();
     } else if (targetValue === '1') {
         pricingContainer.innerHTML = `
         <p class="left-text">50K Pageviews</p>
@@ -47,16 +47,70 @@ function updatePricing(targetValue) {
     }
 }
 
-// function applyDiscount() {
-//     discountToggle.addEventListener('click', e => {
-//         if (e.target.checked) {
-//             pricingContainer.innerHTML = `
-//         <p class="left-text">10K Pageviews</p>
-//         <p><span id="price" class="price">$${8 * 0.75}.00</span> <span class="per-month">/ month</span></p>
-//         `;
-//         }
-//     })
-// }
+discountToggle.addEventListener('click', e => {
+    if (sliderRange.value == 0) {
+        if (e.target.checked) {
+            pricingContainer.innerHTML = `
+                <p class="left-text">10K Pageviews</p>
+                <p><span id="price" class="price">$${8 * 0.75}.00</span> <span class="per-month">/ month</span></p>
+        `;
+        } else {
+            pricingContainer.innerHTML = `
+                <p class="left-text">10K Pageviews</p>
+                <p><span id="price" class="price">$8.00</span> <span class="per-month">/ month</span></p>
+        `;
+        }
+    } else if (sliderRange.value == 1) {
+        if (e.target.checked) {
+            pricingContainer.innerHTML = `
+                <p class="left-text">50K Pageviews</p>
+                <p><span id="price" class="price">$${12 * 0.75}.00</span> <span class="per-month">/ month</span></p>
+        `;
+        } else {
+            pricingContainer.innerHTML = `
+                <p class="left-text">50K Pageviews</p>
+                <p><span id="price" class="price">$12.00</span> <span class="per-month">/ month</span></p>
+        `;
+        }
+    } else if (sliderRange.value == 2) {
+        if (e.target.checked) {
+            pricingContainer.innerHTML = `
+                <p class="left-text">100K Pageviews</p>
+                <p><span id="price" class="price">$${16 * 0.75}.00</span> <span class="per-month">/ month</span></p>
+        `;
+        } else {
+            pricingContainer.innerHTML = `
+                <p class="left-text">100K Pageviews</p>
+                <p><span id="price" class="price">$16.00</span> <span class="per-month">/ month</span></p>
+        `;
+        }
+    } else if (sliderRange.value == 3) {
+        if (e.target.checked) {
+            pricingContainer.innerHTML = `
+                <p class="left-text">500K Pageviews</p>
+                <p><span id="price" class="price">$${24 * 0.75}.00</span> <span class="per-month">/ month</span></p>
+        `;
+        } else {
+            pricingContainer.innerHTML = `
+                <p class="left-text">500K Pageviews</p>
+                <p><span id="price" class="price">$24.00</span> <span class="per-month">/ month</span></p>
+        `;
+        }
+    } else if (sliderRange.value == 4) {
+        if (e.target.checked) {
+            pricingContainer.innerHTML = `
+                <p class="left-text">1M Pageviews</p>
+                <p><span id="price" class="price">$${36 * 0.75}.00</span> <span class="per-month">/ month</span></p>
+        `;
+        } else {
+            pricingContainer.innerHTML = `
+                <p class="left-text">10K Pageviews</p>
+                <p><span id="price" class="price">$36.00</span> <span class="per-month">/ month</span></p>
+        `;
+        }
+    }
+})
+
 
 
 
